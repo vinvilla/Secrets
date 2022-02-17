@@ -51,3 +51,10 @@ scroll down to get the code for app.js
 Mongoose encryption : https://www.npmjs.com/package/mongoose-encryption
 
 Run "npm i mongoose-encryption"
+
+
+//////////////////////////////
+GIT github
+1. sudo git add .
+2. sudo git commit -m "Add Environment Vars"
+3. sudo git push -u origin master
