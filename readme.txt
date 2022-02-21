@@ -47,14 +47,52 @@ scroll down to get the code for app.js
   alias mongod-kill='sudo pkill -f mongod'
 
 //////////////////////////////
-
-Mongoose encryption : https://www.npmjs.com/package/mongoose-encryption
-
-Run "npm i mongoose-encryption"
-
+  GIT github
+  1. sudo git add .
+  2. sudo git commit -m "Add Environment Vars"
+  3. sudo git push -u origin master
 
 //////////////////////////////
-GIT github
-1. sudo git add .
-2. sudo git commit -m "Add Environment Vars"
-3. sudo git push -u origin master
+ (LEVEL 1) Register Users with Login and password
+
+//////////////////////////////
+ (LEVEL 2) Database Encryption
+
+  Mongoose encryption : https://www.npmjs.com/package/mongoose-encryption
+  Run "npm i mongoose-encryption"
+
+//////////////////////////////
+(LEVEL 3) Hashing passwords (uses md5)
+
+Password + Key ----(Cipher Method)----> Cipher Text
+Caesar Cipher = Weak encryption
+Hashing :::::>  Password ----(Hash function)----> Hash
+
+To Install md5, Run "npm i md5"
+
+//////////////////////////////
+(LEVEL 4) Hashing and Salting (uses bcrypt)
+
+Password + Random Salting characters  ----(Hash function)----> Hash
+In the database we would save SALT and Hash
+Using latest GPU, you can generate 20 Billion MD5 Hashes / second
+
+17,000 bcrypt hashes/second (INDUSTRY STANDARD!!! With latest GPU, you can only generate 17,000 bycrypt hash/sec)
+You can do multiple rounds of SALTING
+
+Password + Random Salt_1 ------> Hash_1 + Random Salt_2 ------> Hash_2
+in this case you would have to save Salt_1 , Salt_2 and Hash_2
+
+To Install bcrypt, Run "npm i bcrypt"
+
+//////////////////////////////
+(LEVEL 5) Using Passport.js to Add Cookies and Sessions
+
+To Install passport,
+Run "npm i passport passport-local passport-local-mongoose express-session"
+
+//////////////////////////////
+(LEVEL 6) 3rd Party OAUTH - Open Authorization
+
+Run "npm install passport-google-oauth20"
+Run "npm install mongoose-findorcreate"
